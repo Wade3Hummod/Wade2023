@@ -13,22 +13,37 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        Log.d("WH","onCreate");
+        Log.d("WH", "onCreate");
         Toast.makeText(this, "onCreate", Toast.LENGTH_SHORT).show();
     }
 
     @Override
     protected void onRestart() {
         super.onRestart();
-        Log.d("WH","onRestart");
+        Log.d("WH", "onRestart");
         Toast.makeText(this, "onRestart", Toast.LENGTH_SHORT).show();
 
     }
 
     @Override
-    protected void onResume() {
-        super.onResume();
-        Log.d("WH","onResume");
-        Toast.makeText(this, "onRestart", Toast.LENGTH_SHORT).show();
+    protected void onPause() {
+        super.onPause();
+        Log.d("WH", "onPause");
+        Toast.makeText(this, "onPause", Toast.LENGTH_SHORT).show();
+
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+        Log.d("WH", "onStop");
+        Toast.makeText(this, "onStop", Toast.LENGTH_SHORT).show();
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        Log.d("WH", "onDestroy");
+        Toast.makeText(this, "onDestroy", Toast.LENGTH_SHORT).show();
     }
 }
