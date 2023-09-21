@@ -27,6 +27,10 @@ public class MyTask
      */
     public long time;
     /**
+     * هل تمت المهمة
+     */
+    public boolean isCompleted;
+    /**
      * رقم موضوع المهمة
      */
     public long subjId;
@@ -35,4 +39,16 @@ public class MyTask
      */
     long userId;
 
+    @Override
+    public String toString() {
+        return "MyTask{" +
+                "keyId=" + keyId +
+                ", importance=" + importance +
+                ", text='" + text + '\'' +
+                ", time=" + time +
+                ", isCompleted=" + isCompleted +
+                ", subjId=" + subjId +
+                ", userId=" + userId +
+                '}';
+    }
 }
