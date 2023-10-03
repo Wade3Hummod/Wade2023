@@ -21,14 +21,15 @@ public abstract class AppDatabase extends RoomDatabase
     getMySubjectQuery();
     public abstract MyTaskQuery getMyTaskQuery();
 
-    public static AppDatabase getDB(Context context)
-    {
-        if(db==null)
-        {
+    public static AppDatabase getDB(Context context) {
+        if (db == null) {
             db = Room.databaseBuilder(context,
                             AppDatabase.class, "database-name")
                     .fallbackToDestructiveMigration()
                     .allowMainThreadQueries()
+
                     .build();
         }
         return db;
+    }
+}
