@@ -16,7 +16,9 @@ public abstract class AppDatabase extends RoomDatabase
 {
     private static AppDatabase db;
     public abstract MyUserQuery getMyUserQuery();
-    public abstract MySubjectQuery getMySubjectQuery();
+    public abstract MySubjectQuery
+
+    getMySubjectQuery();
     public abstract MyTaskQuery getMyTaskQuery();
 
     public static AppDatabase getDB(Context context)
