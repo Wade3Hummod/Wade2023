@@ -7,6 +7,10 @@ import android.util.Log;
 import android.view.accessibility.AccessibilityManager;
 import android.widget.Toast;
 
+import com.example.wade2023.data.AppDatabase;
+import com.example.wade2023.data.MySubject;
+import com.example.wade2023.data.MySubjectQuery;
+
 public class MainActivity extends AppCompatActivity {
 
     @Override
@@ -15,6 +19,10 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         Log.d("WH", "onCreate");
         Toast.makeText(this, "onCreate", Toast.LENGTH_SHORT).show();
+        //بناء قاعدة بيانات وارجاع مؤشر عليها 1
+        AppDatabase db=AppDatabase.getDB(getApplicationContext());
+        // مؤشر لكائن عمليات لجدول 2
+        MySubjectQuery SubjectQuery=db
     }
 
     @Override
