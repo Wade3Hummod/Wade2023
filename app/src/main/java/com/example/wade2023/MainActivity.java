@@ -4,12 +4,13 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 import android.util.Log;
-import android.view.accessibility.AccessibilityManager;
 import android.widget.Toast;
 
 import com.example.wade2023.data.AppDatabase;
-import com.example.wade2023.data.MySubject;
-import com.example.wade2023.data.MySubjectQuery;
+import com.example.wade2023.data.SubjectTable.MySubject;
+import com.example.wade2023.data.SubjectTable.MySubjectQuery;
+
+import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -22,7 +23,25 @@ public class MainActivity extends AppCompatActivity {
         //بناء قاعدة بيانات وارجاع مؤشر عليها 1
         AppDatabase db=AppDatabase.getDB(getApplicationContext());
         // مؤشر لكائن عمليات لجدول 2
-        MySubjectQuery SubjectQuery=db
+        MySubjectQuery SubjectQuery=db.getMySubjectQuery();
+        //3  بناء كائن من نوع الجدول وتحديد قيم الصفات
+        MySubject s1=new MySubject();
+        s1.setTitle("Math");
+        MySubject s2=new MySubject();
+        s2.Title="Computers";
+        //4 اضافة كائن للجدول
+        SubjectQuery.insert(s1);
+        SubjectQuery.insert(s2);
+        // فحص هل تم حفظ ما سبق 5
+        //استخراج وطباعة جميع معطيات الجدول المواضيع
+
+            List<MySubject> allSubjects = SubjectQuery.getAll();
+        for (MySubject w:allSubjects)
+        {
+            Log.d("wadea",w.Title);
+            Toast.makeText(this, w.Title, Toast.LENGTH_SHORT).show();
+
+        }
     }
 
     @Override

@@ -6,6 +6,8 @@ import androidx.room.Database;
 import androidx.room.Room;
 import androidx.room.RoomDatabase;
 
+import com.example.wade2023.data.SubjectTable.MySubject;
+import com.example.wade2023.data.SubjectTable.MySubjectQuery;
 import com.example.wade2023.data.myTasksTable.MyTask;
 import com.example.wade2023.data.myTasksTable.MyTaskQuery;
 import com.example.wade2023.data.usersTable.MyUser;
