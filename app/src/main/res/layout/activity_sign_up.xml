@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     tools:context=".SignUpActivity">
 
     <LinearLayout
@@ -32,6 +32,20 @@
                 android:layout_weight="1"
                 android:text="CANCEL" />
         </LinearLayout>
+
+        <TextView
+            android:id="@+id/tvImportance"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="importance" />
+
+        <SeekBar
+            android:id="@+id/skbrImportance"
+            style="@style/Widget.AppCompat.SeekBar.Discrete"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:max="5"
+            android:progress="1" />
 
         <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
