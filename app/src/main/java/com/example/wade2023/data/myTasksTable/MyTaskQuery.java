@@ -14,12 +14,11 @@ public interface MyTaskQuery
 {
     /**
      * اعادة جميع معطيات جدول المهمات
-     * @return
+     *
      */
     @Query("SELECT*FROM MyTask")
-
-
-    list<MyTask> getAllTasks();
+    default void getAllTasks() {
+    }
 
     /**
      * استخراج المهمات حسب المستعمل وهل انتهت ام لا وهل مرتبة حسب الاهمية
@@ -27,8 +26,7 @@ public interface MyTaskQuery
      * @param isComplted_p
      * @return
      */
-    @Query("SELECT * FROM MyTask WHERE userId=:userid_p AND isCompleted =:isComplted_p"
-            "ORDER BY importance DESC")
+    @Query("SELECT * FROM MyTask WHERE userId=:userid_p AND isCompleted =:isComplted_p ORDER BY importance DESC")
     List<MyTask> getAllTaskOrderBy(long userid_p,boolean isComplted_p);
 
     /**
