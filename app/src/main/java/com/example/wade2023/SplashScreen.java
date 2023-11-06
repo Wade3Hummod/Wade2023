@@ -16,6 +16,7 @@ public class SplashScreen extends AppCompatActivity {
         setContentView(R.layout.activity_splash_screen);
         Log.d(" ", "OnCreate:");
         Toast.makeText(this, "OnCreate:", Toast.LENGTH_SHORT).show();
+
         //بناء قاعدة بيانات وارجاع مؤشر عليها 1
 
         Handler h=new Handler();
@@ -35,34 +36,34 @@ public class SplashScreen extends AppCompatActivity {
     @Override
     protected void onRestart() {
         super.onRestart();
-        Log.d("yassen", "onRestart: ");
+        Log.d("hummod", "onRestart: ");
         Toast.makeText(this, "onRestart:",Toast.LENGTH_SHORT).show();
     }
 
     @Override
     protected void onResume() {
         super.onResume();
-        Log.d("yassen", "onResume: ");
+        Log.d("hummod", "onResume: ");
         Toast.makeText(this, "onResume:",Toast.LENGTH_SHORT).show();
     }
 
     @Override
     protected void onPause() {
         super.onPause();
-        Log.d("yassen", "onPause: ");
+        Log.d("hummod", "onPause: ");
         Toast.makeText(this, "onPause:",Toast.LENGTH_SHORT).show();
     }
 
     @Override
     protected void onStop() {
         super.onStop();
-        Log.d("yassen", "onStop: ");
+        Log.d("hummod", "onStop: ");
         Toast.makeText(this, "onStop:",Toast.LENGTH_SHORT).show();
     }
     @Override
     protected void onDestroy() {
         super.onDestroy();
-        Log.d("yassen", "onDestroy: ");
+        Log.d("hummod", "onDestroy: ");
         Toast.makeText(this, "onDestroy:",Toast.LENGTH_SHORT).show();
     }
 }
