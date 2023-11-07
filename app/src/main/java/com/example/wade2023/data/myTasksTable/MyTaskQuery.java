@@ -14,12 +14,11 @@ public interface MyTaskQuery
 {
     /**
      * اعادة جميع معطيات جدول المهمات
-     * @return
+     *
      */
     @Query("SELECT*FROM MyTask")
-
-
-    list<MyTask> getAllTasks();
+    default void getAllTasks() {
+    }
 
     /**
      * استخراج المهمات حسب المستعمل وهل انتهت ام لا وهل مرتبة حسب الاهمية
