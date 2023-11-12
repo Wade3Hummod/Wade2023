@@ -15,7 +15,7 @@ public class SignInActivity extends AppCompatActivity
 
     private TextInputEditText etEmail;
     private TextInputEditText etPassword;
-    private Button btnSignIn2;
+    private Button btnSignIn1;
     private Button btnSingUp2;
 
     @Override
@@ -25,24 +25,24 @@ public class SignInActivity extends AppCompatActivity
         etPassword=findViewById(R.id.etPassword);
         etEmail=findViewById(R.id.etEmail);
         btnSingUp2=findViewById(R.id.btnSingUp2);
-        btnSignIn2=findViewById(R.id.btnSignIn2);
+        btnSignIn1=findViewById(R.id.btnSignIn1);
 
 
 
 
 
     }
-    public void onclickGo1(View v)
+    public void onclickSignUp(View v)
     {
 
         Intent i= new Intent(SignInActivity.this, SignUpActivity.class);
         startActivity(i);
-        finish();
-    }
-    public void onclickGo2(View v)
-    {
-
 
     }
+//    public void onclickGo2(View v)
+//    {
+//
+//
+//    }
 
 }

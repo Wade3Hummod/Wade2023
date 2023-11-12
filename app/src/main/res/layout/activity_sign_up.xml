@@ -31,6 +31,7 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="8dp"
                 android:layout_weight="1"
+                android:onClick="onclickCancel"
                 android:text="CANCEL"
                 app:cornerRadius="20dp" />
         </LinearLayout>

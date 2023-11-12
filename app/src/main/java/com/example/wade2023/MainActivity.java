@@ -4,20 +4,43 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 import android.util.Log;
+import android.widget.Button;
+import android.widget.ListView;
+import android.widget.SearchView;
+import android.widget.Spinner;
 import android.widget.Toast;
 
 import com.example.wade2023.data.AppDatabase;
 import com.example.wade2023.data.SubjectTable.MySubject;
 import com.example.wade2023.data.SubjectTable.MySubjectQuery;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import java.util.List;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity
+{
+    private FloatingActionButton fabAdd;
+    private SearchView srhV;
+    private Spinner spnrSubject;
+    private ListView lstvTasks;
+
+
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        fabAdd=findViewById(R.id.fabAdd);
+        srhV=findViewById(R.id.srhV);
+        spnrSubject=findViewById(R.id.spnrSubject);
+        lstvTasks=findViewById(R.id.lstvTasks);
+
+
+
+
+
         Log.d("WH", "onCreate");
         Toast.makeText(this, "onCreate", Toast.LENGTH_SHORT).show();
         //بناء قاعدة بيانات وارجاع مؤشر عليها 1

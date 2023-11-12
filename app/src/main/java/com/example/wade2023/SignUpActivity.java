@@ -2,7 +2,9 @@ package com.example.wade2023;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
 
 import com.google.android.material.textfield.TextInputEditText;
@@ -33,6 +35,11 @@ public class SignUpActivity extends AppCompatActivity
 
 
 
+
+    }
+    public void onclickCancel(View v)
+    {
+        finish();
 
     }
 }

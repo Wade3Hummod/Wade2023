@@ -4,16 +4,22 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.util.Log;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-public class SplashScreen extends AppCompatActivity {
+public class SplashScreen extends AppCompatActivity
+{
+    private TextView etWelcome;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash_screen);
+        etWelcome=findViewById(R.id.etWelcome);
+
         Log.d(" ", "OnCreate:");
         Toast.makeText(this, "OnCreate:", Toast.LENGTH_SHORT).show();
 
