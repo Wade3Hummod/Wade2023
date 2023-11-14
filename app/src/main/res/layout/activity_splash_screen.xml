@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/can_task_be_a_verb_5813_7075c71d8cf734c3c83e9edf76bc66fb"
-    tools:context=".SplashScreen">
+ >
 
 
     <TextView
