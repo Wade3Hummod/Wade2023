@@ -8,6 +8,9 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
+import com.example.wade2023.data.AppDatabase;
+import com.example.wade2023.data.usersTable.MyUser;
+import com.example.wade2023.data.usersTable.MyUserQuery;
 import com.google.android.material.textfield.TextInputEditText;
 
 public class SignInActivity extends AppCompatActivity
@@ -62,5 +65,22 @@ public class SignInActivity extends AppCompatActivity
         {
             Toast.makeText(this, "ALL OK", Toast.LENGTH_SHORT).show();
         }
+        if(isAllok)
+        {
+            Toast.makeText(this, "All Ok", Toast.LENGTH_SHORT).show();
+            //بناء قاعدة بيانات وارجاع مؤشر عليها1
+            AppDatabase db=AppDatabase.getDB(getApplicationContext());
+            //مؤشر لكائن عمليات الجدول2
+            MyUserQuery userQuery=db.getMyUserQuery();
+            // 3.استدعاء العملية التي تنفذ الاستعلام الذي يفحص البريد وكلمة السر ويعيد كائنا ان كان موجود او ان لم يكن موجود null
+            MyUser myUser=userQuery.checkEmailPassw(email,password);
+            if(myUser==null)//هل يوجد كائن حسب الايميل والباسورد
+                Toast.makeText(this, "Wrong Email Or Password", Toast.LENGTH_SHORT).show();
+            else {//ان كان هنالك حساب الايميل والباسورد ننتقل الى الشاشة الرئيسية
+                Intent i = new Intent(SignInActivity.this, MainActivity.class);
+                startActivity(i);
+                finish();
+            }
+        }           
     }
 }

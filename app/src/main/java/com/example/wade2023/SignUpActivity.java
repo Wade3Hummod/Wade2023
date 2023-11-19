@@ -42,4 +42,8 @@ public class SignUpActivity extends AppCompatActivity
         finish();
 
     }
+    public void onclickSave(View v)
+    {
+
+    }
 }
