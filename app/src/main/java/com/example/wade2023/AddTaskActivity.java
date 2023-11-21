@@ -29,7 +29,7 @@ public class AddTaskActivity extends AppCompatActivity
         tvImportance=findViewById(R.id.tvImportance);
         skbrImportance=findViewById(R.id.skbrImportance);
         etEmail=findViewById(R.id.etEmail);
-        etText=findViewById(R.id.etText);
+        etText=findViewById(R.id.etPassword);
 
 
 
