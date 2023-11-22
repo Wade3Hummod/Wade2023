@@ -67,7 +67,7 @@ public class SignUpActivity extends AppCompatActivity {
             etEmail.setError("Wrong Email");
 
         }
-        if (password.length() > 8 && password.length() < 20 || password.contains("") == true)
+        if (password.length() < 8 || password.length() > 20 || password.contains(" ") == true)
         {
             isAllok = false;
             etPassword.setError("Password between 8 - 20 letters");
@@ -79,7 +79,7 @@ public class SignUpActivity extends AppCompatActivity {
         }
 
 
-        if (phone.length() <10 || phone.contains("") == true)
+        if (phone.length() <10 || phone.contains(" ") == true)
         {
             isAllok = false;
             etPhone.setError("phone number is not 10  numbers");

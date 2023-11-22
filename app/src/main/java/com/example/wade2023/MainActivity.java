@@ -1,12 +1,12 @@
 package com.example.wade2023;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.SearchView;
 
 import android.os.Bundle;
 import android.util.Log;
 import android.widget.Button;
 import android.widget.ListView;
-import android.widget.SearchView;
 import android.widget.Spinner;
 import android.widget.Toast;
 
@@ -37,38 +37,16 @@ public class MainActivity extends AppCompatActivity
         spnrSubject=findViewById(R.id.spnrSubject);
         lstvTasks=findViewById(R.id.lstvTasks);
 
+    }
+    public void setOnClickListener(view v)
+    {
 
 
-
-
-        Log.d("WH", "onCreate");
-        Toast.makeText(this, "onCreate", Toast.LENGTH_SHORT).show();
-        //بناء قاعدة بيانات وارجاع مؤشر عليها 1
-        AppDatabase db=AppDatabase.getDB(getApplicationContext());
-        // مؤشر لكائن عمليات لجدول 2
-        MySubjectQuery SubjectQuery=db.getMySubjectQuery();
-        //3  بناء كائن من نوع الجدول وتحديد قيم الصفات
-        MySubject s1=new MySubject();
-        s1.setTitle("Math");
-        MySubject s2=new MySubject();
-        s2.Title="Computers";
-        //4 اضافة كائن للجدول
-        SubjectQuery.insert(s1);
-        SubjectQuery.insert(s2);
-        // فحص هل تم حفظ ما سبق 5
-        //استخراج وطباعة جميع معطيات الجدول المواضيع
-
-            List<MySubject> allSubjects = SubjectQuery.getAll();
-        for (MySubject w:allSubjects)
-        {
-            Log.d("wadea",w.Title);
-            Toast.makeText(this, w.Title, Toast.LENGTH_SHORT).show();
-
-        }
     }
 
     @Override
-    protected void onRestart() {
+    protected void onRestart()
+    {
         super.onRestart();
         Log.d("WH", "onRestart");
         Toast.makeText(this, "onRestart", Toast.LENGTH_SHORT).show();
