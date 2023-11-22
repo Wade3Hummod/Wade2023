@@ -5,6 +5,7 @@ import androidx.appcompat.widget.SearchView;
 
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
 import android.widget.Button;
 import android.widget.ListView;
 import android.widget.Spinner;
@@ -40,6 +41,16 @@ public class MainActivity extends AppCompatActivity
     }
     public void setOnClickListener(view v)
     {
+        fabAdd=findViewById(R.id.fabAdd);
+        fabAdd.setOnClickListener(new View.OnClickListener()
+        {
+            @Override
+            public void onClick(View view)
+            {
+
+
+            }
+        });
 
 
     }
