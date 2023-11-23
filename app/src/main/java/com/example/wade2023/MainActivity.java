@@ -3,6 +3,7 @@ package com.example.wade2023;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.SearchView;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -18,42 +19,40 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import java.util.List;
 
-public class MainActivity extends AppCompatActivity
-{
+public class MainActivity extends AppCompatActivity {
     private FloatingActionButton fabAdd;
     private SearchView srhV;
     private Spinner spnrSubject;
     private ListView lstvTasks;
 
 
-
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        fabAdd=findViewById(R.id.fabAdd);
-        srhV=findViewById(R.id.srhV);
-        spnrSubject=findViewById(R.id.spnrSubject);
-        lstvTasks=findViewById(R.id.lstvTasks);
-
-    }
-    public void setOnClickListener(view v)
-    {
-        fabAdd=findViewById(R.id.fabAdd);
+        fabAdd = findViewById(R.id.fabAdd);
         fabAdd.setOnClickListener(new View.OnClickListener()
+
         {
             @Override
-            public void onClick(View view)
-            {
-
-
+            public void onClick (View view){
+                Intent i = new Intent(MainActivity.this, AddTaskActivity.class);
+                startActivity(i);
             }
         });
-
+        srhV = findViewById(R.id.srhV);
+        spnrSubject = findViewById(R.id.spnrSubject);
+        lstvTasks = findViewById(R.id.lstvTasks);
 
     }
+
+
+
+
+
+
+
+
 
     @Override
     protected void onRestart()
