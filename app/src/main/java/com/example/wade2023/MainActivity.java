@@ -1,11 +1,14 @@
 package com.example.wade2023;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.SearchView;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ListView;
@@ -45,14 +48,30 @@ public class MainActivity extends AppCompatActivity {
         lstvTasks = findViewById(R.id.lstvTasks);
 
     }
+     @Override//بناء قائمة
+    public boolean onCreateOptionsMenu(Menu menu)
+     {
+         getMenuInflater().inflate(R.menu.menu_item,menu);
+         return true;
+     }
 
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item)
+    {
+        if(item.getItemId()==R.id.itmAddTask)
+        {
+        }
+        if(item.getItemId()==R.id.itmLogOut)
+        {
+            Toast.makeText(this, "Log Out", Toast.LENGTH_SHORT).show();
+        }
+        if(item.getItemId()==R.id.itmSettings)
+        {
+            Toast.makeText(this, "Settings", Toast.LENGTH_SHORT).show();
 
-
-
-
-
-
-
+        }
+        return true;
+    }
 
     @Override
     protected void onRestart()
