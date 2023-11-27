@@ -3,6 +3,7 @@ package com.example.wade2023;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
 import android.widget.SeekBar;
 import android.widget.TextView;
@@ -30,12 +31,9 @@ public class AddTaskActivity extends AppCompatActivity
         skbrImportance=findViewById(R.id.skbrImportance);
         etEmail=findViewById(R.id.etEmail);
         etText=findViewById(R.id.etPassword);
-
-
-
-
-
-
+    }
+    public void onclickCancelAddTask(View v) {
+        finish();
 
     }
 }
