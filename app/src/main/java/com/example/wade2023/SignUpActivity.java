@@ -30,8 +30,8 @@ public class SignUpActivity extends AppCompatActivity {
         btnCancel = findViewById(R.id.btnCancel);
         etName = findViewById(R.id.etName);
         etPhone = findViewById(R.id.etPhone);
-        etEmail = findViewById(R.id.etEmail);
-        etPassword = findViewById(R.id.etPassword);
+        etEmail = findViewById(R.id.etShortTitle);
+        etPassword = findViewById(R.id.etText);
         etRe_password = findViewById(R.id.etRe_password);
 
 

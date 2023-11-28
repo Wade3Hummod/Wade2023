@@ -27,7 +27,7 @@ public class EditTaskActivity extends AppCompatActivity
         tvImportance=findViewById(R.id.tvImportance);
         skbrImportance=findViewById(R.id.skbrImportance);
         etShortTitle=findViewById(R.id.etShortTitle);
-        etText=findViewById(R.id.etPassword);
+        etText=findViewById(R.id.etText);
     }
 
 }

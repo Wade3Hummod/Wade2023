@@ -5,6 +5,8 @@ import androidx.room.Insert;
 import androidx.room.Query;
 import androidx.room.Update;
 
+import com.example.wade2023.data.usersTable.MyUser;
+
 import java.util.List;
 
 
@@ -19,6 +21,9 @@ public interface MySubjectQuery {
     List<MySubject> getAll();
     @Insert
     void insertAll(MySubject... users);
+
+        @Query("SELECT * FROM MySubject WHERE Title = :mySubject")
+    MyUser checkSubject(String mySubject);
 
     @Delete
     void delete(MySubject user);
