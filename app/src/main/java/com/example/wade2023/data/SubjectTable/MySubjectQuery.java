@@ -23,7 +23,7 @@ public interface MySubjectQuery {
     void insertAll(MySubject... users);
 
         @Query("SELECT * FROM MySubject WHERE Title = :mySubject")
-    MyUser checkSubject(String mySubject);
+    MySubject checkSubject(String mySubject);
 
     @Delete
     void delete(MySubject user);

@@ -13,7 +13,7 @@ public class MyTask
     /**
      * رقم المهمة
      */
-    public Long keyId;
+    public long keyId;
     /**
      * درجة الاهمية 5-1
      */
@@ -50,5 +50,13 @@ public class MyTask
                 ", subjId=" + subjId +
                 ", userId=" + userId +
                 '}';
+    }
+
+    public long getKeyId() {
+        return keyId;
+    }
+    public void setKeyId(long keyId)
+    {
+        this.keyId=keyId;
     }
 }

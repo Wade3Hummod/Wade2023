@@ -10,6 +10,7 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ListView;
 import android.widget.Spinner;
@@ -18,6 +19,7 @@ import android.widget.Toast;
 import com.example.wade2023.data.AppDatabase;
 import com.example.wade2023.data.SubjectTable.MySubject;
 import com.example.wade2023.data.SubjectTable.MySubjectQuery;
+import com.example.wade2023.data.myTasksTable.MyTaskQuery_Impl;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import java.util.List;
@@ -79,6 +81,43 @@ public class MainActivity extends AppCompatActivity {
         super.onRestart();
         Log.d("WH", "onRestart");
         Toast.makeText(this, "onRestart", Toast.LENGTH_SHORT).show();
+
+    }
+    @Override
+    protected void onResume()
+    {
+        super.onResume();
+        Toast.makeText(this, "onCreate", Toast.LENGTH_SHORT).show();
+        initSubjectSpnr();
+        initAllListView();
+    }
+
+    /**
+     * عملية تجهيز السبنر بالمواضيع
+     */
+    private void initSubjectSpnr()
+    {
+        AppDatabase db =AppDatabase.getDB((getApplicationContext()));//قاعدة بناء
+        MySubjectQuery subjectQuery =db.getMySubjectQuery();//عمليات جدول المواضيع
+        List<MySubject>allSubjects =subjectQuery.getAll();//استخراج جميع المواضيع
+        //تجهيز الوسيط
+        ArrayAdapter<String> subjectAdabter= new ArrayAdapter<String>(this, android.R.layout.simple_dropdown_item_1line);
+        subjectAdabter.add("All");//ستظهر اولا بالسبنر تعني عرض جميع المهمات
+        for(MySubject subject : allSubjects)//اضافة المواضيع للوسيط
+        {
+            subjectAdabter.add((subject.getTitle()));
+        }
+        spnrSubject.setAdapter((subjectAdabter));//ربط سبنر بالوسيط
+
+    }
+
+    /**
+     * تجهيز قائمة جميع المهمات وعرضها ب ListView
+     */
+    private void initAllListView()
+    {
+        AppDatabase db =AppDatabase.getDB((getApplicationContext()));
+        MyTaskQuery taskQuery=db.getMyTaskQuery();
 
     }
 

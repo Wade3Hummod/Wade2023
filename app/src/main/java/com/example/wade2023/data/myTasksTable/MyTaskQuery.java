@@ -34,7 +34,7 @@ public interface MyTaskQuery
      * @param t مجموعة مهمات *
      */
     @Insert
-    void insertTask(MyTask...t);//ثلاثة نقلط تعني مجموعه
+    void insertTask(MyTask... t);//ثلاثة نقلط تعني مجموعه
 
     /**
      * تعديل المهمات

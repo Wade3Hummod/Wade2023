@@ -18,7 +18,7 @@ import com.example.wade2023.data.usersTable.MyUserQuery;
 version
 عند تغير اي شيء يخص جدول او جداول علينا تغيير رقم الاصدار ليتم بناء قاعدة البيانات من جديد
  */
-@Database(entities = {MyUser.class, MySubject.class, MyTask.class},version = 1)
+@Database(entities = {MyUser.class, MySubject.class, MyTask.class},version = 2)
 /**
  * الفئة المسؤولة عن بناء قاعدة البيانات بكل جداولها
  * وتوفر لنا كائن لتعامل مع قاعدة البناء

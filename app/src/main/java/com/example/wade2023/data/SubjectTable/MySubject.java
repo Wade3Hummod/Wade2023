@@ -16,6 +16,10 @@ import androidx.room.PrimaryKey;
         Title = title;
     }
 
+    public long getKeyid() {
+        return keyid;
+    }
+
     public void setKeyid(long keyid) {
         this.keyid = keyid;
 

@@ -14,6 +14,8 @@ import android.widget.Toast;
 import com.example.wade2023.data.AppDatabase;
 import com.example.wade2023.data.SubjectTable.MySubject;
 import com.example.wade2023.data.SubjectTable.MySubjectQuery;
+import com.example.wade2023.data.myTasksTable.MyTask;
+import com.example.wade2023.data.usersTable.MyUser;
 import com.google.android.material.textfield.TextInputEditText;
 
 import java.util.List;
@@ -96,11 +98,11 @@ public class AddTaskActivity extends AppCompatActivity {
             MySubject subject = subjectQuery.checkSubject(autoetSubj);
 
 
-            MyTasks task = new MyTasks();
+            MyTask task = new MyTask();
             task.importance = importancee;
             task.text = Text;
-            task.Shorttitle = short_title;
-            task.subjid = subject.getKeyid();//تحديد رقم الموضوع للمهة
+            task.importance = importancee;
+            task.subjId = subject.getKeyid();//تحديد رقم الموضوع للمهة
             db.getMyTaskQuery().insertTask(task);//اضافة المهمة للجدول
             finish();
         }
@@ -110,4 +112,10 @@ public class AddTaskActivity extends AppCompatActivity {
         finish();
 
     }
+    public void onclickAddTask(View v)
+    {
+        checkSaveandCancel();
+    }
+
+
 }
