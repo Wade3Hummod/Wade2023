@@ -19,6 +19,8 @@ import android.widget.Toast;
 import com.example.wade2023.data.AppDatabase;
 import com.example.wade2023.data.SubjectTable.MySubject;
 import com.example.wade2023.data.SubjectTable.MySubjectQuery;
+import com.example.wade2023.data.myTasksTable.MyTask;
+import com.example.wade2023.data.myTasksTable.MyTaskQuery;
 import com.example.wade2023.data.myTasksTable.MyTaskQuery_Impl;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
@@ -118,6 +120,9 @@ public class MainActivity extends AppCompatActivity {
     {
         AppDatabase db =AppDatabase.getDB((getApplicationContext()));
         MyTaskQuery taskQuery=db.getMyTaskQuery();
+        List<MyTask>allTasks = taskQuery.getAllTasks();
+        ArrayAdapter<MyTask>tsksAdapter=new ArrayAdapter<MyTask>(this, android.R.layout.simple_list_item_1);//
+        tsksAdapter.add("ALL");//ستظهر اولا بالسبنر تعني عرض جميع المهمات
 
     }
 

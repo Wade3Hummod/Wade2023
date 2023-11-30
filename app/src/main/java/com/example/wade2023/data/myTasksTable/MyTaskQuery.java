@@ -17,8 +17,7 @@ public interface MyTaskQuery
      *
      */
     @Query("SELECT*FROM MyTask")
-    default void getAllTasks() {
-    }
+    List<MyTask>  getAllTasks() ;
 
     /**
      * استخراج المهمات حسب المستعمل وهل انتهت ام لا وهل مرتبة حسب الاهمية
