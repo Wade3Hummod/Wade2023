@@ -121,10 +121,27 @@ public class MainActivity extends AppCompatActivity {
         AppDatabase db =AppDatabase.getDB((getApplicationContext()));
         MyTaskQuery taskQuery=db.getMyTaskQuery();
         List<MyTask>allTasks = taskQuery.getAllTasks();
-        ArrayAdapter<MyTask>tsksAdapter=new ArrayAdapter<MyTask>(this, android.R.layout.simple_list_item_1);//
-        tsksAdapter.add("ALL");//ستظهر اولا بالسبنر تعني عرض جميع المهمات
-
+        ArrayAdapter<MyTask>tsksAapter=new ArrayAdapter<MyTask>(this, android.R.layout.simple_list_item_1);
+        tsksAapter.addAll(allTasks);
+        lstvTasks.setAdapter(tsksAapter);
     }
+
+    /**
+     * تجهيز قائمة المهمات حسب رقم الموضوع
+     * رقم الموضوع param key_id@
+     */
+    private void initListViewBySubjId(long key_id)
+    {
+        AppDatabase db=AppDatabase.getDB(getApplicationContext());
+        MyTaskQuery taskQuery=db.getMyTaskQuery();
+        //يجب اضافة عملية تعيد جميع المهمات حسب رقم الموضوع
+        List<MyTask>allTasks=taskQuery.getTaskBySubjId(key_id);
+        ArrayAdapter<MyTask>taskAdapter=new ArrayAdapter<MyTask>(this, android.R.layout.simple_list_item_1);
+        taskAdapter.addAll(allTasks);
+        lstvTasks.setAdapter(taskAdapter);
+    }
+    spnrSubject.setAdapter(subjectAdapter);//ربط السبنر بالوسيط
+
 
     @Override
     protected void onPause() {

@@ -19,6 +19,9 @@ public interface MyTaskQuery
     @Query("SELECT*FROM MyTask")
     List<MyTask>  getAllTasks() ;
 
+    @Query("SELECT*FROM MyTask WHERE subjId =:subjId_p")
+    List<MyTask>  getTaskBySubjId(long subjId_p) ;
+
     /**
      * استخراج المهمات حسب المستعمل وهل انتهت ام لا وهل مرتبة حسب الاهمية
      * @param userid_p
