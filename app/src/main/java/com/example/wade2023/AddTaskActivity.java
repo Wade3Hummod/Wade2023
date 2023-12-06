@@ -43,6 +43,12 @@ public class AddTaskActivity extends AppCompatActivity {
         etText = findViewById(R.id.etText);
     }
 
+    @Override
+    protected void onResume() {
+        super.onResume();
+        initAutoEtSubjects();
+    }
+
     private void initAutoEtSubjects() {
         //مؤشر لقاعدة البيانات
         AppDatabase db = AppDatabase.getDB(getApplicationContext());

@@ -10,6 +10,7 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ListView;
@@ -110,7 +111,26 @@ public class MainActivity extends AppCompatActivity {
             subjectAdabter.add((subject.getTitle()));
         }
         spnrSubject.setAdapter((subjectAdabter));//ربط سبنر بالوسيط
+        spnrSubject.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id)
+            {//استخراج الموضوع حسب رقمه الترتيبي position
+                String item=subjectAdabter.getItem(position);
+                if (item.equals("All"))//هذه يعني عرض جميع المهام
+                    initAllListView();
+                else
+                {
+                    //استخراج كائن الموضوع الذي اخترناه  لاستخراج رقمه id
+                    MySubject subject=subjectQuery.checkSubject(item);
+                    //استدعاء العملية التي تجهز القائمة حسب رقم الموضوع id
+                    initListViewBySubjId(subject.getKeyid());
+                }
+            }
 
+            @Override
+            public void onNothingSelected(AdapterView<?> parent)
+            {}
+        });
     }
 
     /**
@@ -140,7 +160,7 @@ public class MainActivity extends AppCompatActivity {
         taskAdapter.addAll(allTasks);
         lstvTasks.setAdapter(taskAdapter);
     }
-    spnrSubject.setAdapter(subjectAdapter);//ربط السبنر بالوسيط
+
 
 
     @Override
