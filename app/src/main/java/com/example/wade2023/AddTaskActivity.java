@@ -76,12 +76,12 @@ public class AddTaskActivity extends AppCompatActivity {
         String Text = etText.getText().toString();
         int importancee = skbrImportance.getProgress();
         String autoetSubj = autoEtSubject.getText().toString();
-        if (short_title.length() < 8 || short_title.contains(" ") == true) {
+        if (short_title.length() < 2) {
 
             isAllOK = false;
             etShortTitle.setError("Wrong short_title");
         }
-        if (Text.length() < 8 || Text.contains(" ") == true) {
+        if (Text.length() < 2 || Text.contains(" ") == true) {
 
             isAllOK = false;
             etText.setError("Wrong text");
@@ -122,6 +122,7 @@ public class AddTaskActivity extends AppCompatActivity {
     {
         checkSaveandCancel();
     }
+
 
 
 }

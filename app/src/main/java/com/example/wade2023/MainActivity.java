@@ -108,6 +108,8 @@ public class MainActivity extends AppCompatActivity {
         subjectAdabter.add("All");//ستظهر اولا بالسبنر تعني عرض جميع المهمات
         for(MySubject subject : allSubjects)//اضافة المواضيع للوسيط
         {
+            if(subject.getTitle()==null)
+                subject.setTitle(" ");
             subjectAdabter.add((subject.getTitle()));
         }
         spnrSubject.setAdapter((subjectAdabter));//ربط سبنر بالوسيط
