@@ -56,8 +56,7 @@ public abstract class AppDatabase extends RoomDatabase
 
     public static AppDatabase getDB(Context context) {
         if (db == null) {
-            db = Room.databaseBuilder(context,
-                            AppDatabase.class, "database-name")//اسم قاعدة البيانات
+            db = Room.databaseBuilder(context,AppDatabase.class, "database-name")//اسم قاعدة البيانات
                     .fallbackToDestructiveMigration()
                     .allowMainThreadQueries()
 
