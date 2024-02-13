@@ -22,7 +22,6 @@ import com.example.wade2023.data.SubjectTable.MySubject;
 import com.example.wade2023.data.SubjectTable.MySubjectQuery;
 import com.example.wade2023.data.myTasksTable.MyTask;
 import com.example.wade2023.data.myTasksTable.MyTaskQuery;
-import com.example.wade2023.data.myTasksTable.MyTaskQuery_Impl;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import java.util.List;

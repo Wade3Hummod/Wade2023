@@ -3,7 +3,7 @@ package com.example.wade2023.data.myTasksTable;
 import androidx.room.Entity;
 import androidx.room.PrimaryKey;
 import androidx.room.ColumnInfo;
-
+@Entity
 public  class MyTask
 {
     @PrimaryKey(autoGenerate = true)

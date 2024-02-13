@@ -108,7 +108,7 @@ public class AddTaskActivity extends AppCompatActivity {
             task.importance = importancee;
             task.text = Text;
             task.importance = importancee;
-            task.subjId = subject.getKeyid();//تحديد رقم الموضوع للمهة
+            task.subjid = subject.getKeyid();//تحديد رقم الموضوع للمهة
             db.getMyTaskQuery().insertTask(task);//اضافة المهمة للجدول
             finish();
         }
